@@ -1,5 +1,9 @@
 FROM python:3.9
 
+# Keep Python output unbuffered so logs show up in `docker logs`
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+
 WORKDIR /app/backend
 
 COPY requirements.txt /app/backend
